@@ -26,7 +26,8 @@ function App() {
     //use it somewhere else (use in the input element)
     try {
       let colors = new Values(color).all(10);
-      console.log(colors);
+      //set the state of the array colors to be the colors just extratcted
+      setList(colors);
     } catch (error) {
       setError(true);
       console.log(error);
@@ -61,7 +62,12 @@ function App() {
         </form>
       </section>
       <section className="colors">
-        <h4>list goes here</h4>
+        {list.map((color, index) => {
+          //take the color array you just set it to in the setList from the
+          //try catch and iterate over it and return the component and pass the values in as
+          //props
+          return <SingleColor key={index} {...color} index={index} />;
+        })}
       </section>
     </>
   );
