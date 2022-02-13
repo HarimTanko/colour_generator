@@ -66,7 +66,14 @@ function App() {
           //take the color array you just set it to in the setList from the
           //try catch and iterate over it and return the component and pass the values in as
           //props
-          return <SingleColor key={index} {...color} index={index} />;
+          return (
+            <SingleColor
+              key={index}
+              {...color}
+              index={index}
+              hexColor={color.hex}
+            />
+          );
         })}
       </section>
     </>
