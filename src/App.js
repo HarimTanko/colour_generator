@@ -12,7 +12,7 @@ function App() {
   const [error, setError] = useState(false);
 
   //set a default list of colors
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(new Values("#f15025").all(10));
 
   //set up a handle submit because were going to use a
   //form
